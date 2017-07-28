@@ -8,11 +8,13 @@
     <NuspecFile>$(MSBuildProjectName).nuspec</NuspecFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.DiaSymReader" Version="$(MicrosoftDiaSymReaderVersion)" />
-    <PackageReference Include="System.Collections.Immutable" Version="$(SystemCollectionsImmutableVersion)" />
-    <PackageReference Include="System.Reflection.Metadata" Version="$(SystemReflectionMetadataVersion)" />
+    <InternalsVisibleTo Include="Microsoft.DiaSymReader.PortablePdb.UnitTests" />
   </ItemGroup>
   <ItemGroup>
-    <InternalsVisibleTo Include="Microsoft.DiaSymReader.PortablePdb.UnitTests" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.4.0-preview2-25405-01" />
+    <PackageReference Include="System.Reflection.Metadata" Version="1.5.0-preview2-25405-01" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\symreader\src\Microsoft.DiaSymReader\Microsoft.DiaSymReader.csproj" />
   </ItemGroup>
 </Project>
